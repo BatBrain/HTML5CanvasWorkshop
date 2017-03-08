@@ -8,18 +8,38 @@
 
 <body>
     <div id="main">
-        
+
     </div>
     <canvas id="scratch" width="500" height="500"></canvas>
     <script async type="text/javascript" >
         var canvas = document.getElementById("scratch");
         var dc = canvas.getContext("2d");
 
+        var gradient = dc.createLinearGradient(100, 50, 300, 50);
+        gradient.addColorStop(0, "red");
+        gradient.addColorStop(1, "yellow");
+
         dc.lineWidth = 8;
         dc.strokeStyle = "red";
         dc.strokeRect(100, 50, 200, 100);
 
+        dc.fillStyle = gradient;
         dc.fillRect(150, 150, 200, 100);
+
+        dc.shadowOffsetX = 4;
+        dc.shadowOffsetY = 4;
+        dc.shadowBlur = 8;
+        dc.shadowColor = "rgba(0, 0, 0, 0.5)";
+        dc.font = "bold 24pt sans-serif";
+        dc.fillStyle = "red";
+        dc.fillText("Sol", 40, 120);
+
+        // dc.font = "bold 72pt sans-serif";
+        // dc.strokeStyle = "red";
+        // dc.fillStyle = "blue";
+        // dc.strokeText("JS TORONTO ROCKS", 40, 130);
+        // dc.fillText("JS TORONTO ROCKS", 40, 130);
+
     </script>
 </body>
 </html>
